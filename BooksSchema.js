@@ -1,0 +1,18 @@
+const mongoose = require('mongoose');
+
+const BookSchema = new mongoose.Schema({
+  booktitle: {
+    type: String,
+    required: true
+  },
+  PubYear: Number,
+  author: String,
+  Topic: String,
+  formate: String   // Electronic / Hard Copy
+});
+
+module.exports = mongoose.model(
+  'Book',
+  BookSchema,
+  'BookCollection'
+);
